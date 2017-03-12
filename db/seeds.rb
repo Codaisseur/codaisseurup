@@ -1,11 +1,17 @@
+Photo.delete_all
 Category.delete_all
 Event.delete_all
+Profile.delete_all
 User.delete_all
 
 miriam = User.create!(
   email: "miriam@codaisseurup.com",
   password: "abcd1234",
 )
+
+photo1 = Photo.create(remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1489331995/yoga_dog_03_iy1ukm.jpg")
+photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1489331985/yoga_dog_02_affayd.jpg")
+photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1489331989/yoga_dog_01_swh1ea.jpg")
 
 event = Event.create!(
   name: "Monthly Yoga Weekend",
@@ -19,6 +25,7 @@ event = Event.create!(
   capacity: 100,
   active: true,
   user: miriam,
+  photos: [photo1, photo2, photo3],
 )
 
 Category.create!([
