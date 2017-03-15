@@ -1,3 +1,13 @@
+<% if current_user != @event.user %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Register</div>
+
+    <div class="panel-body">
+      <%= render 'registrations/form' %>
+    </div>
+  </div>
+<% end %>
+
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h4><%= @event.name %></h4>
