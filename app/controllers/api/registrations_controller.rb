@@ -1,5 +1,4 @@
-class Api::RegistrationsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+class Api::RegistrationsController < Api::BaseController
   before_filter :set_event
 
   def create
